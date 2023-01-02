@@ -18,10 +18,11 @@ a {
 :root {
 	--black: #2B2D42;
 	--white: #FFF;
+	--gray: rgb(180, 182, 185);
 	--primary: #8D99AE;
 	--primary-hover: #EDF2F4;
 	--red: #D90429;
-	--green: #34C565;
-	--green-light: #A3E0B8;
+	--green: #227e40;
+	--green-light: #a7ddb9;
 	--font-family: "Poppins", sans-serif;
 }

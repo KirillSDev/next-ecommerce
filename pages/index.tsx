@@ -1,4 +1,4 @@
-import { Htag, Button, Paragraph } from '../components';
+import { Htag, Button, Paragraph, Tag } from '../components';
 
 export default function Home(): JSX.Element {
 	return (
@@ -22,6 +22,21 @@ export default function Home(): JSX.Element {
 				totam magnam natus, quisquam architecto maiores saepe doloremque
 				maxime dicta exercitationem!
 			</Paragraph>
+			<Paragraph size="big">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+				explicabo dolor, nulla, atque obcaecati unde animi cum quae eveniet
+				dolore assumenda dignissimos inventore saepe. Sunt maiores quibusdam
+				quod similique aliquam?
+			</Paragraph>
+			<Tag size="small" color="green">
+				Hello Guys
+			</Tag>
+			<Tag size="small" color="red" link="#">
+				Photoshop
+			</Tag>
+			<Tag>Web Design</Tag>
+			<Tag color="green">Web Design</Tag>
+			<Tag color="gray">Web Design</Tag>
 		</>
 	);
 }
