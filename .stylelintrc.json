@@ -7,6 +7,7 @@
 	],
 	"rules": {
 		"indentation": "tab",
-		"color-hex-case": "upper"
+		"color-hex-case": "upper",
+		"selector-class-pattern": null
 	}
 }

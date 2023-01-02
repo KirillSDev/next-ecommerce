@@ -10,7 +10,8 @@
             {
                 "allowSingleExtends": true
             }
-        ]
+        ],
+        "quotes": ["error", "single", { "avoidEscape": true }]
     },
     "extends": [   
         "next/core-web-vitals",

@@ -16,10 +16,11 @@ a {
 }
 
 :root {
-	--black: #302C2C;
+	--black: #2B2D42;
 	--white: #FFF;
-	--primary: #E69271;
-	--red: #971C1C;
+	--primary: #8D99AE;
+	--primary-hover: #EDF2F4;
+	--red: #D90429;
 	--green: #34C565;
 	--green-light: #A3E0B8;
 	--font-family: "Poppins", sans-serif;
