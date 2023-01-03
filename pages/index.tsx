@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Htag, Button, Paragraph, Tag, Rating } from '../components';
+import { wrapLayout } from '../layout/Layout';
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
 	const [rating, setRating] = useState<number>(4);
 	return (
 		<>
@@ -31,3 +32,4 @@ export default function Home(): JSX.Element {
 		</>
 	);
 }
+export default wrapLayout(Home);
