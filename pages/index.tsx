@@ -1,8 +1,11 @@
-import { Htag, Button, Paragraph, Tag } from '../components';
+import { useState } from 'react';
+import { Htag, Button, Paragraph, Tag, Rating } from '../components';
 
 export default function Home(): JSX.Element {
+	const [rating, setRating] = useState<number>(4);
 	return (
 		<>
+			<Rating rating={rating} setRating={setRating} />
 			<Htag tag="h1">Text</Htag>
 			<Button apperance="primary" arrow="down">
 				Log In
@@ -15,18 +18,6 @@ export default function Home(): JSX.Element {
 				dolor eos possimus consequatur similique, corrupti earum ea autem
 				totam magnam natus, quisquam architecto maiores saepe doloremque
 				maxime dicta exercitationem!
-			</Paragraph>
-			<Paragraph size="medium">
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, illo
-				dolor eos possimus consequatur similique, corrupti earum ea autem
-				totam magnam natus, quisquam architecto maiores saepe doloremque
-				maxime dicta exercitationem!
-			</Paragraph>
-			<Paragraph size="big">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-				explicabo dolor, nulla, atque obcaecati unde animi cum quae eveniet
-				dolore assumenda dignissimos inventore saepe. Sunt maiores quibusdam
-				quod similique aliquam?
 			</Paragraph>
 			<Tag size="small" color="green">
 				Hello Guys

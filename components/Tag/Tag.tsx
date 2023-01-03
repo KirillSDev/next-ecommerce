@@ -7,7 +7,6 @@ export const Tag = ({
 	children,
 	color = 'primary',
 	link,
-	className,
 	...props
 }: TagProps): JSX.Element => {
 	return (
