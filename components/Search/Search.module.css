@@ -1,0 +1,11 @@
+.search {
+	cursor: pointer;
+	width: 300px;
+	border: none;
+	background-color: var(--white);
+	outline-style: none;
+	border-radius: 10px;
+	border: 2px solid var(--primary-hover);
+	padding: 5px;
+	transition: border-color 0.2s;
+}

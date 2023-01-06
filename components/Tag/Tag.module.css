@@ -22,7 +22,7 @@
 }
 
 .red {
-	background-color: var(--red);
+	background-color: var(--back);
 	color: var(--white);
 }
 

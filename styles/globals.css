@@ -3,9 +3,11 @@ body {
 	margin: 0;
 	padding: 0;
 	color: var(--black);
-	background-color: #F5F6F8;
+	background-color: #f5f6f8;
 }
-
+li {
+	list-style-type: none;
+}
 a {
 	text-decoration: none;
 	color: inherit;
@@ -16,13 +18,13 @@ a {
 }
 
 :root {
-	--black: #2B2D42;
-	--white: #FFF;
-	--gray: rgb(180 182 185);
-	--primary: #8D99AE;
-	--primary-hover: #EDF2F4;
-	--red: #D90429;
-	--green: #227E40;
-	--green-light: #A7DDB9;
-	--font-family: "Poppins", sans-serif;
+	--black: #000000;
+	--white: #f8f8f8;
+	--orange: #f77f00;
+	--gray: #969696;
+	--primary: #c5c5c4;
+	--back: #ffbe0b;
+	--green: #0b1408;
+	--green-light: rgb(138, 211, 148);
+	--font-family: 'Poppins', sans-serif;
 }

@@ -1,4 +1,3 @@
-import { Paragraph } from '../../components';
 import styles from './Footer.module.css';
 import { FooterProps } from './Footer.props';
 

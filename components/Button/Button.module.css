@@ -25,7 +25,7 @@
 }
 
 .primary:hover {
-	background-color: var(--primary-hover);
+	background-color: var(--white);
 }
 
 .unprimary {
@@ -39,7 +39,7 @@
 }
 
 .unprimary:hover {
-	background-color: var(--primary-hover);
+	background-color: var(--white);
 	border: 1px solid var(--black);
 	color: var(--black);
 }

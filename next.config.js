@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	webpack(config, options) {
 		config.module.rules.push({
 			loader: '@svgr/webpack',
@@ -14,19 +15,19 @@ const nextConfig = {
 							name: 'preset-default',
 							params: {
 								override: {
-									removeViewBox: false,
-								},
-							},
-						},
-					],
+									removeViewBox: false
+								}
+							}
+						}
+					]
 				},
-				titleProp: true,
+				titleProp: true
 			},
-			test: /\.svg$/,
+			test: /\.svg$/
 		});
 
 		return config;
-	},
+	}
 };
 
 module.exports = nextConfig;

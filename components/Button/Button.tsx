@@ -15,17 +15,17 @@ export const Button = ({
 			<button
 				className={cn(styles.button, className, {
 					[styles.primary]: apperance == 'primary',
-					[styles.unprimary]: apperance == 'unprimary',
+					[styles.unprimary]: apperance == 'unprimary'
 				})}
 				{...props}
 			>
 				{children}
 				{arrow !== 'none' && (
 					<ArrowIcon
-						alt="arrow"
+						alt='arrow'
 						className={cn(styles.arrow, {
 							[styles.arrowDown]: arrow == 'down',
-							[styles.arrowRight]: arrow == 'right',
+							[styles.arrowRight]: arrow == 'right'
 						})}
 					/>
 				)}

@@ -5,15 +5,17 @@
 	grid-template-rows: auto 1fr auto;
 	grid-template-areas:
 		'. header header .'
-		'. sidebar main .'
+		'. main main .'
 		'footer footer footer footer';
 }
 .header {
-	display: none;
+	position: relative;
 	grid-area: header;
-	background-color: azure;
+	background-color: var(--back);
 }
 .sidebar {
+	position: relative;
+	display: none;
 	grid-area: sidebar;
 }
 .main {

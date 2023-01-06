@@ -4,7 +4,7 @@ import Document, {
 	Main,
 	NextScript,
 	DocumentContext,
-	DocumentInitialProps,
+	DocumentInitialProps
 } from 'next/document';
 
 class MyDocument extends Document {
@@ -16,7 +16,7 @@ class MyDocument extends Document {
 	}
 	render(): JSX.Element {
 		return (
-			<Html lang="en">
+			<Html lang='en'>
 				<Head />
 				<body>
 					<Main />

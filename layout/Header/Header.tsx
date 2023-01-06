@@ -1,6 +1,11 @@
-import styles from './Header.module.css';
+import { FC } from 'react';
 import { HeaderProps } from './Header.props';
+import { Menu } from '../../components/Menu/Menu';
 
-export const Header = ({ ...props }: HeaderProps): JSX.Element => {
-	return <div {...props}>Header</div>;
+export const Header: FC<HeaderProps> = ({ ...props }): JSX.Element => {
+	return (
+		<div {...props}>
+			<Menu />
+		</div>
+	);
 };
