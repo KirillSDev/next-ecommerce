@@ -8,9 +8,8 @@ export const CartActions: FC<{
 	children?: ReactNode;
 	item: ICartItem;
 }> = ({ item }) => {
-	const [quantity, setQuantity] = useState(item.quantity);
 	const [isClick, setIsClick] = useState(false);
-	const { addToCart, removeFromToCart } = useActions();
+	const { addToCart, removeFromToCart, changeQuantity } = useActions();
 	return (
 		<div className={styles['cart-actions']}>
 			<button
@@ -19,8 +18,8 @@ export const CartActions: FC<{
 					[styles['button-unclick']]: isClick === false
 				})}
 				onClick={() => {
-					if (quantity > 0) {
-						setQuantity(quantity - 1);
+					if (item.quantity > 0) {
+						changeQuantity({ type: 'minus', id: item.id });
 					}
 					setIsClick(true);
 					setTimeout(() => {
@@ -30,15 +29,15 @@ export const CartActions: FC<{
 			>
 				-
 			</button>
-			<div>{quantity}</div>
+			<div>{item.quantity}</div>
 			<button
 				className={cn(styles.button, {
 					[styles['button-click']]: isClick === true,
 					[styles['button-unclick']]: isClick === false
 				})}
 				onClick={() => {
-					if (quantity < 5) {
-						setQuantity(quantity + 1);
+					if (item.quantity < 5) {
+						changeQuantity({ type: 'plus', id: item.id });
 					}
 					setIsClick(true);
 					setTimeout(() => {

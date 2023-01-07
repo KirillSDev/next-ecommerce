@@ -16,7 +16,9 @@ const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 			/>
 			<div className={styles.name}>{item.product.name}</div>
 			<div className={styles.quantity}>{'Quintity: ' + item.quantity}</div>
-			<div className={styles.price}>{item.product.price + ' $'}</div>
+			<div className={styles.price}>
+				{(item.quantity * item.product.price).toFixed(2) + ' $'}
+			</div>
 			<div className={styles.description}>{item.product.description}</div>
 			<CartActions item={item}></CartActions>
 		</div>
