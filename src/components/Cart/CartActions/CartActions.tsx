@@ -2,8 +2,7 @@ import { FC, ReactNode, useState } from 'react';
 import { ICartItem } from '../../../types/ICartItem.interface';
 import styles from './CartActions.module.css';
 import cn from 'classnames';
-import { useDispatch } from 'react-redux';
-import { cartSlice } from '../../../store/slice';
+import { useActions } from '../../../hooks/useActions';
 
 export const CartActions: FC<{
 	children?: ReactNode;
@@ -11,7 +10,7 @@ export const CartActions: FC<{
 }> = ({ item }) => {
 	const [quantity, setQuantity] = useState(item.quantity);
 	const [isClick, setIsClick] = useState(false);
-	const dispatch = useDispatch();
+	const { addToCart, removeFromToCart } = useActions();
 	return (
 		<div className={styles['cart-actions']}>
 			<button
@@ -40,19 +39,6 @@ export const CartActions: FC<{
 				onClick={() => {
 					if (quantity < 5) {
 						setQuantity(quantity + 1);
-						dispatch(
-							cartSlice.actions.addToCart({
-								id: item.id,
-								product: {
-									id: 6,
-									name: 'losos',
-									price: 234,
-									description: 'ddefe',
-									images: ['/public/images/products/sushi_with_eel.png']
-								},
-								quantity: 2
-							})
-						);
 					}
 					setIsClick(true);
 					setTimeout(() => {
@@ -64,9 +50,7 @@ export const CartActions: FC<{
 			</button>
 			<button
 				className={styles.remove}
-				onClick={() =>
-					dispatch(cartSlice.actions.removeFromToCart({ id: item.id }))
-				}
+				onClick={() => removeFromToCart({ id: item.id })}
 			>
 				Remove
 			</button>
