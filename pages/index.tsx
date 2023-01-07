@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Htag, Button, Paragraph, Tag, Rating } from '../components';
-import { Layout } from '../layout/Layout';
+import { Htag, Button, Paragraph, Tag, Rating } from '../src/components';
+import { Layout } from '../src/layout/Layout';
 
 export default function Home(): JSX.Element {
 	const [rating, setRating] = useState<number>(4);

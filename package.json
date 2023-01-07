@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.3",
     "@next/font": "13.1.1",
+    "@react-spring/web": "^9.6.1",
     "antd": "^5.1.2",
     "axios": "1.2.2",
     "classnames": "2.3.2",
@@ -23,6 +24,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
     "@svgr/webpack": "6.5.1",
     "@types/classnames": "2.3.1",
     "@types/node": "18.11.18",
@@ -37,6 +39,7 @@
     "postcss": "8.4.20",
     "postcss-nested": "6.0.0",
     "postcss-nesting": "^10.2.0",
+    "react-redux": "^8.0.5",
     "stylelint": "14.16.1",
     "stylelint-config-standard": "29.0.0",
     "stylelint-order": "5.0.0",

@@ -1,4 +1,5 @@
 .container {
+	overflow: hidden;
 	display: grid;
 	height: 100vh;
 	grid-template-columns: auto 230px minmax(350px, 1200px) auto;

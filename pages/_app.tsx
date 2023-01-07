@@ -1,11 +1,14 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import '../styles/globals.css';
 import 'antd/dist/reset.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { store } from '../src/store/store';
+import { Provider } from 'react-redux';
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	return (
-		<>
+		<Provider store={store}>
 			<Head>
 				<title>Rankings App</title>
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
@@ -15,8 +18,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 					rel='stylesheet'
 				/>
 			</Head>
-
 			<Component {...pageProps} />
-		</>
+		</Provider>
 	);
 }

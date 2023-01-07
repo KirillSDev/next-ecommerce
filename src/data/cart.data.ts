@@ -8,8 +8,18 @@ export const cartData: ICartItem[] = [
         quantity: 1
     },
     {
-        id: 1,
+        id: 2,
         product: products[1],
+        quantity: 1
+    },
+    {
+        id: 3,
+        product: products[2],
+        quantity: 1
+    },
+    {
+        id: 4,
+        product: products[3],
         quantity: 1
     }
 ];

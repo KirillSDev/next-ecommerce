@@ -31,6 +31,7 @@
 .unprimary {
 	background-color: var(--black);
 	color: var(--white);
+	border: 1px solid var(--black);
 	transition: all 0.3s ease;
 }
 
@@ -40,7 +41,6 @@
 
 .unprimary:hover {
 	background-color: var(--white);
-	border: 1px solid var(--black);
 	color: var(--black);
 }
 

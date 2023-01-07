@@ -18,7 +18,9 @@ export const Menu: FC = () => {
 				{menuData.map((item) => {
 					return <MenuItem key={item.link} item={item} />;
 				})}
-				<Cart></Cart>
+				<div className={styles.cart}>
+					<Cart></Cart>
+				</div>
 			</div>
 		</div>
 	);
