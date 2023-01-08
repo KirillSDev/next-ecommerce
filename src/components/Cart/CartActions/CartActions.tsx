@@ -18,7 +18,9 @@ export const CartActions: FC<{
 					[styles['button-unclick']]: isClick === false
 				})}
 				onClick={() => {
-					if (item.quantity > 0) {
+					if (item.quantity < 1) {
+						removeFromToCart({ id: item.id });
+					} else if (item.quantity > 0) {
 						changeQuantity({ type: 'minus', id: item.id });
 					}
 					setIsClick(true);

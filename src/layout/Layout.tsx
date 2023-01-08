@@ -2,6 +2,7 @@ import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
 import styles from './Layout.module.css';
 import { LayoutProps } from './Layout.props';
+import Main from './Main/Main';
 import { Sidebar } from './Sidebar/Sidebar';
 
 export const Layout = ({ children }: LayoutProps): JSX.Element => {
@@ -9,7 +10,8 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
 		<div className={styles.container}>
 			<Header className={styles.header} />
 			<Sidebar className={styles.sidebar} />
-			<div className={styles.main}>{children}</div>
+			<Main className={styles.main}></Main>
+			{/* <div>{children}</div> */}
 			<Footer className={styles.footer} />
 		</div>
 	);

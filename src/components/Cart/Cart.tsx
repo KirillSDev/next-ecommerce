@@ -19,23 +19,32 @@ const Cart: FC = () => {
 				className={styles.button}
 				onClick={() => setIsOpen(!isOpen)}
 			>
+				{cart.length ? (
+					<div className={styles['count-cart']}>{cart.length}</div>
+				) : (
+					''
+				)}
 				Cart
 			</Button>
 			{isOpen && (
 				<div className={styles.wrapperCart}>
 					<div className={styles.containerCart}>
-						<div className={styles.absoluteCart}>
-							{cart.map((cart) => {
-								return <CartItem key={cart.id} item={cart} />;
-							})}
-							<div className={styles.total}>
-								<span>Total:</span>
-								<span>{'$' + total.toFixed(2)}</span>
+						{cart.length ? (
+							<div className={styles.absoluteCart}>
+								{cart.map((cart) => {
+									return <CartItem key={cart.id} item={cart} />;
+								})}
+								<div className={styles.total}>
+									<span>Total:</span>
+									<span>{'$' + total.toFixed(2)}</span>
+								</div>
+								<Button apperance='primary' className={styles.checkout}>
+									Checkout
+								</Button>
 							</div>
-							<Button apperance='primary' className={styles.checkout}>
-								Checkout
-							</Button>
-						</div>
+						) : (
+							<div className={styles['cart-empty']}>Cart is empty</div>
+						)}
 					</div>
 				</div>
 			)}

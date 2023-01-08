@@ -1,0 +1,76 @@
+.carousel {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	gap: 20px;
+	justify-items: center;
+}
+.container {
+	position: relative;
+	cursor: pointer;
+}
+.container-header {
+	position: relative;
+	transition: background 0.2s linear, transform 0.2s ease-out,
+		opacity 0.1s linear, box-shadow 0.1s;
+	cursor: pointer;
+	display: grid;
+	justify-items: center;
+	padding: 5px;
+	padding-top: 0px;
+	min-height: 270px;
+	max-width: 300px;
+	height: fit-content;
+	width: fit-content;
+	font-weight: 400;
+	border-radius: 20px;
+	font-size: 14px;
+	line-height: 14px;
+	background-color: var(--green-light);
+	border: 2px solid var(--black);
+	box-shadow: 10px 2px 3px rgba(0, 0, 0, 0.1);
+}
+.container-header:hover {
+	background-image: url('../../../../../assets/vorderrhein.svg');
+	background-size: cover;
+	transform: scale(1.1);
+	box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+	/* opacity: 0.5; */
+}
+.container-header:hover::after {
+	position: absolute;
+	/* content: 'Add to Cart'; */
+	font-size: 20px;
+	font-weight: bold;
+	background-color: rgb(206, 158, 54);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.container-active {
+}
+.item-image {
+	margin-top: -80px;
+}
+.name {
+	font-size: 18px;
+	font-weight: bold;
+}
+.price {
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 2px;
+	display: flex;
+	opacity: 0.9;
+}
+.description {
+	margin-top: 2px;
+	opacity: 0.9;
+	text-align: center;
+	font-style: oblique;
+}
+.button {
+	background: none;
+	border: none;
+}
