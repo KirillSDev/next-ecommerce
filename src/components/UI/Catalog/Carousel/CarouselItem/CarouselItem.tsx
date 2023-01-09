@@ -20,9 +20,11 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 					width={220}
 					height={150}
 				></Image>
-				<div className={styles.name}>{product.name}</div>
-				<div className={styles.description}>{product.description}</div>
-				<div className={styles.price}>{'Price: ' + product.price}</div>
+				<div className={styles['container-info']}>
+					<div className={styles.name}>{product.name}</div>
+					<div className={styles.description}>{product.description}</div>
+					<div className={styles.price}>{'Price: ' + product.price + ' $'}</div>
+				</div>
 			</div>
 			<div className={styles['add-item']}></div>
 		</div>
