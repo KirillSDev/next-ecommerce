@@ -5,6 +5,24 @@ body {
 	color: var(--black);
 	background-color: #f5f6f8;
 }
+.not-found-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: var(--back);
+	text-align: center;
+}
+.not-found-page h1 {
+	font-size: 40px;
+}
+
+.not-found-page a {
+	font-size: 20px;
+}
+.not-found-page a:hover {
+	color: var(--orange);
+}
 li {
 	list-style-type: none;
 }

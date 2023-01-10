@@ -1,7 +1,8 @@
-import { DetailedHTMLProps, FC, HTMLAttributes } from 'react';
+import { FC, HTMLAttributes } from 'react';
 import { IProduct } from '../../../../../types/IProduct.interface';
 import Image from 'next/image';
 import styles from './CarouselItem.module.css';
+import Link from 'next/link';
 import cn from 'classnames';
 
 const isActive = false;
@@ -24,6 +25,9 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 					<div className={styles.name}>{product.name}</div>
 					<div className={styles.description}>{product.description}</div>
 					<div className={styles.price}>{'Price: ' + product.price + ' $'}</div>
+					<Link href={`/product/${product.slug}`} className={styles.link}>
+						More information
+					</Link>
 				</div>
 			</div>
 			<div className={styles['add-item']}></div>

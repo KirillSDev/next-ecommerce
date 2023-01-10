@@ -3,10 +3,11 @@ import styles from './Sorting.module.css';
 import { useState } from 'react';
 import cn from 'classnames';
 import { sortingData } from './sorting.data';
+import { EnumSorting } from './sorting.interface';
 
 const Sorting: FC = () => {
 	const [isActiveDrop, setIsActiveDrop] = useState(false);
-	const [sort, setSort] = useState('Default Sorting');
+	const [sortType, setSortType] = useState('Default sorting');
 	return (
 		<div className={styles.grid}>
 			<div className={styles.container}>
@@ -14,7 +15,7 @@ const Sorting: FC = () => {
 					className={styles['drop-btn']}
 					onClick={() => setIsActiveDrop(!isActiveDrop)}
 				>
-					{sort}
+					{sortType}
 				</button>
 				<div
 					className={cn(styles['dropdown-content'], {
@@ -26,7 +27,7 @@ const Sorting: FC = () => {
 							href='#'
 							key={sort.value}
 							onClick={() => {
-								setSort(sort.name);
+								setSortType(sort.name);
 								setIsActiveDrop(!isActiveDrop);
 							}}
 						>

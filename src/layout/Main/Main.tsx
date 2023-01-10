@@ -1,23 +1,11 @@
-import { FC } from 'react';
-import Catalog from '../../components/UI/Catalog/Catalog';
+import { MainProps } from './Main.props';
 import styles from './Main.module.css';
-import Heading from '../../components/UI/Heading/Heading';
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { products } from '../../data/products.data';
-import Sorting from '../../components/UI/Sorting/Sorting';
+import cn from 'classnames';
 
-export interface Main
-	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
-
-const Main: FC<Main> = ({ ...props }) => {
+export const Main = ({ children, ...props }: MainProps): JSX.Element => {
 	return (
 		<div {...props}>
-			<Heading>
-				Our new taste <br /> is your new emotions
-			</Heading>
-			<Catalog products={products} className={styles.catalog} />
+			<div className={styles.main}>{children}</div>
 		</div>
 	);
 };
-
-export default Main;

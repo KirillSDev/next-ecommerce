@@ -11,25 +11,24 @@ export const Button = ({
 	...props
 }: ButtonProps): JSX.Element => {
 	return (
-		<>
-			<button
-				className={cn(styles.button, className, {
-					[styles.primary]: apperance == 'primary',
-					[styles.unprimary]: apperance == 'unprimary'
-				})}
-				{...props}
-			>
-				{children}
-				{arrow !== 'none' && (
-					<ArrowIcon
-						alt='arrow'
-						className={cn(styles.arrow, {
-							[styles.arrowDown]: arrow == 'down',
-							[styles.arrowRight]: arrow == 'right'
-						})}
-					/>
-				)}
-			</button>
-		</>
+		<button
+			className={cn(styles.button, className, {
+				[styles.primary]: apperance == 'primary',
+				[styles.unprimary]: apperance == 'unprimary',
+				[styles.green]: apperance == 'green'
+			})}
+			{...props}
+		>
+			{children}
+			{arrow !== 'none' && (
+				<ArrowIcon
+					alt='arrow'
+					className={cn(styles.arrow, {
+						[styles.arrowDown]: arrow == 'down',
+						[styles.arrowRight]: arrow == 'right'
+					})}
+				/>
+			)}
+		</button>
 	);
 };

@@ -1,7 +1,7 @@
 .button {
 	cursor: pointer;
 	position: relative;
-	display: inline-block;
+	display: flex;
 	border: none;
 	box-sizing: border-box;
 	text-align: center;
@@ -33,6 +33,16 @@
 	color: var(--white);
 	border: 1px solid var(--black);
 	transition: all 0.3s ease;
+}
+.green {
+	background-color: var(--green-light);
+	border: 1px solid var(--black);
+	transition: all 0.3s ease;
+}
+
+.green:hover {
+	background-color: var(--white);
+	color: var(--black);
 }
 
 .unprimary svg {

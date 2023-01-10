@@ -1,14 +1,13 @@
 .container {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	background-image: url('../../../assets/clarence.svg');
-	animation: Heading 15s infinite ease-in-out;
-	border-radius: 10px;
-	text-align: end;
-	padding: 10px;
+	z-index: 500;
 }
 
 .heading {
+	/* background-image: url('../../../assets/clarence.svg');
+	animation: Heading 15s infinite ease-in-out; */
+	border-radius: 10px;
+	text-align: end;
+	padding: 10px;
 	font-size: 40px;
 	color: rgb(241, 241, 241);
 	font-weight: bolder;

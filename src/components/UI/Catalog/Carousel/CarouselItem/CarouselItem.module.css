@@ -1,8 +1,9 @@
 .carousel {
+	margin: 100px 0px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	align-items: center;
-	gap: 20px;
+	gap: 50px 20px;
 	justify-items: center;
 }
 .container {
@@ -78,7 +79,28 @@
 	text-align: center;
 	font-style: oblique;
 }
+.link {
+	font-size: 10px;
+	font-weight: 700;
+}
+.link:hover {
+	color: rgb(241, 241, 241);
+	text-shadow: 1px 1px rgba(12, 8, 8, 0.295);
+}
 .button {
 	background: none;
 	border: none;
+}
+
+@media (max-width: 760px) {
+	.carousel {
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+	}
+}
+@media (max-width: 660px) {
+	.carousel {
+		grid-template-columns: repeat(1, 1fr);
+		justify-items: center;
+	}
 }

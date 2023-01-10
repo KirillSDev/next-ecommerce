@@ -1,12 +1,22 @@
+import Head from 'next/head';
 import { useState } from 'react';
 import { Htag, Button, Paragraph, Tag, Rating } from '../src/components';
 import { Layout } from '../src/layout/Layout';
+import { MainPage } from '../src/screens/Home/Home';
 
 export default function Home(): JSX.Element {
 	const [rating, setRating] = useState<number>(4);
 	return (
-		<Layout>
-			<Rating rating={rating} setRating={setRating} />
+		<Layout
+			title='Sushi shop'
+			description='Delicious and inexpensive rolls. Cooking quality is guaranteed.'
+		>
+			<MainPage />
+		</Layout>
+	);
+}
+
+/* <Rating rating={rating} setRating={setRating} />
 			<Htag tag='h1'>Text</Htag>
 			<Button apperance='primary' arrow='down'>
 				Log In
@@ -28,7 +38,4 @@ export default function Home(): JSX.Element {
 			</Tag>
 			<Tag>Web Design</Tag>
 			<Tag color='green'>Web Design</Tag>
-			<Tag color='gray'>Web Design</Tag>
-		</Layout>
-	);
-}
+			<Tag color='gray'>Web Design</Tag> */

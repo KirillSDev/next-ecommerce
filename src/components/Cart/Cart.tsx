@@ -38,7 +38,7 @@ const Cart: FC = () => {
 									<span>Total:</span>
 									<span>{'$' + total.toFixed(2)}</span>
 								</div>
-								<Button apperance='primary' className={styles.checkout}>
+								<Button apperance='green' className={styles.checkout}>
 									Checkout
 								</Button>
 							</div>

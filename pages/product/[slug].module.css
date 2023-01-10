@@ -1,0 +1,109 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, auto auto auto);
+	grid-template-rows: 1fr;
+	grid-template-areas: 'heading image product-info';
+	text-align: center;
+}
+.container-info {
+	position: relative;
+	z-index: 1;
+	color: var(--white);
+	grid-area: image;
+	text-align: center;
+}
+.heading {
+	margin-top: 50px;
+	z-index: 50;
+	grid-area: heading;
+}
+.container-info::before {
+	opacity: 1;
+	left: 0px;
+	top: 130px;
+
+	border-radius: 50%;
+	content: '';
+	z-index: -100;
+	position: absolute;
+	background-color: var(--white);
+	background-image: url('../../src/assets/smile.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 500px;
+	width: 500px;
+	-webkit-box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
+}
+
+.product-image {
+}
+
+.circle {
+	display: none;
+	grid-area: variabl;
+	margin-left: 80px;
+	flex: 50%;
+	margin-top: 180px;
+	z-index: 2;
+	gap: 20px;
+}
+.circle > div {
+	cursor: pointer;
+	border: 1px solid var(--black);
+	-webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+	-moz-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+	box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+	font-size: 24px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	background-color: var(--white);
+	transition: box-shadow 0.1s linear;
+}
+.circle > div:hover {
+	box-shadow: 10px 10px 10px 0px rgba(163, 161, 161, 0.6) inset;
+}
+.button {
+	display: flex;
+	justify-content: center;
+	z-index: 60;
+	color: var(--white);
+	padding-top: 10px;
+}
+.button > button {
+	padding: 10px 40px;
+}
+.product-info {
+	padding: 5px;
+	height: 300px;
+	margin-top: 370px;
+	max-width: 300px;
+	margin-left: -150px;
+	border-radius: 50px 50px 10px 50px;
+	z-index: 80;
+	grid-area: product-info;
+	background-color: var(--white);
+}
+.name {
+	padding-top: 20px;
+	font-size: 24px;
+	font-weight: 700;
+}
+.price {
+	padding-top: 20px;
+	font-size: 24px;
+	font-weight: 400;
+}
+.description {
+	padding-top: 20px;
+	font-size: 16px;
+	font-weight: 400;
+}
+.rating {
+	padding-top: 10px;
+}

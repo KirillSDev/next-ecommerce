@@ -1,11 +1,15 @@
 .grid {
+	display: grid;
+	justify-content: flex-end;
 }
 .container {
+	display: grid;
+	justify-content: flex-end;
 	opacity: 0.7;
 	position: relative;
 	display: block;
 	align-items: center;
-	z-index: 1000;
+	z-index: 1;
 }
 .drop-btn {
 	background-color: var(--black);
@@ -15,6 +19,7 @@
 	border: none;
 }
 .dropdown-content {
+	margin-top: 0px;
 	display: none;
 	text-align: start;
 	position: absolute;
@@ -22,6 +27,7 @@
 	min-width: 160px;
 	z-index: 1;
 	color: var(--white);
+	right: 0;
 	border-radius: 10px;
 }
 .dropdown-content-active {

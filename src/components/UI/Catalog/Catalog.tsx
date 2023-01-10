@@ -9,7 +9,7 @@ interface Catalog
 const Catalog: FC<{
 	products: IProduct[];
 	props?: Catalog;
-	className: string;
+	className?: string;
 }> = ({ products, className }) => {
 	return (
 		<div className={className}>

@@ -1,11 +1,16 @@
-import { FC, ReactNode } from 'react';
+import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react';
 import styles from './Heading.module.css';
 import Sorting from '../Sorting/Sorting';
+import cn from 'classnames';
 
-const Heading: FC<{ children: ReactNode }> = ({ children }) => {
+interface IHeading
+	extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
+	children: ReactNode;
+}
+
+const Heading: FC<IHeading> = ({ children, ...props }) => {
 	return (
-		<div className={styles.container}>
-			<Sorting></Sorting>
+		<div className={cn(styles.container, { ...props })}>
 			<h1 className={styles.heading}>{children}</h1>;
 		</div>
 	);
