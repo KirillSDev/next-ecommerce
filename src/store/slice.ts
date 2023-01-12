@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { cartData } from '../data/cart.data';
 import { ICartItem } from '../types/ICartItem.interface';
+import { IProduct } from '../types/IProduct.interface';
 import { IChangeQuantityPayload } from './types';
 
 interface IInitialState {
@@ -30,3 +31,22 @@ export const cartSlice = createSlice ({
  },
 
 });
+
+interface IInitialStateSearch {
+    item: string
+}
+
+const initialStateSearch: IInitialStateSearch =  {
+   item: ''
+};
+export const searchSlice = createSlice ({
+    name: 'search',
+    initialState: initialStateSearch,
+    reducers: {
+      addToArray: (state, action: PayloadAction<{item: string}>) => {
+       state.item = action.payload.item},
+      removeFromArray: (state) => {
+        state.item='';
+    },
+}
+   });

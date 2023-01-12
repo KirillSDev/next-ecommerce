@@ -1,11 +1,12 @@
 import { bindActionCreators } from '@reduxjs/toolkit';
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { cartSlice } from '../store/slice';
+import { cartSlice, searchSlice } from '../store/slice';
 
 
 const RootActions = {
-    ...cartSlice.actions
+    ...cartSlice.actions,
+    ...searchSlice.actions
 };
 
 export const useActions = () => {

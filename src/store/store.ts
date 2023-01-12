@@ -1,15 +1,16 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
 import { persistStore, persistReducer, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import {cartSlice} from './slice';
+import {cartSlice, searchSlice} from './slice';
 
 const rootReducer = combineReducers({
-    cart: cartSlice.reducer
+    cart: cartSlice.reducer,
+    search: searchSlice.reducer
 });
 const persistConfig = {
     key: 'sushi-shop',
     storage,
-    whitelist: ['cart']
+    whitelist: ['cart','search']
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

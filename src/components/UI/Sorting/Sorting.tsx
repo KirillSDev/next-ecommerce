@@ -3,7 +3,6 @@ import styles from './Sorting.module.css';
 import { useState } from 'react';
 import cn from 'classnames';
 import { sortingData } from './sorting.data';
-import { EnumSorting } from './sorting.interface';
 
 const Sorting: FC = () => {
 	const [isActiveDrop, setIsActiveDrop] = useState(false);

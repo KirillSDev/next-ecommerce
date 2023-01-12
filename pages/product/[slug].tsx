@@ -8,6 +8,7 @@ import { Button, Rating } from '../../src/components';
 import Image from 'next/image';
 import styles from './[slug].module.css';
 import { useActions } from '../../src/hooks/useActions';
+import { useTypedSelector } from '../../src/hooks/useTypedSelector';
 
 export interface IProductDetails {
 	product: IProduct;
@@ -35,8 +36,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const ProductDetails: FC<IProductDetails> = ({ product }) => {
-	const { addToCart } = useActions();
+	const cart = useTypedSelector((state) => state.cart);
+	const item = () => {
+		const cartItem = cart.items.find((item) => item.id === product.id);
+		if (cartItem) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	const { addToCart, removeFromToCart } = useActions();
 	const [rating, setRating] = useState<number>(3);
+	const [inCart, setInCart] = useState<boolean>(false);
 	return (
 		<Layout title={product.name} description={product.description}>
 			<div className={styles.wrapper}>
@@ -78,11 +89,13 @@ const ProductDetails: FC<IProductDetails> = ({ product }) => {
 					<div className={styles.button}>
 						<Button
 							apperance='unprimary'
-							onClick={() =>
-								addToCart({ id: product.id, product, quantity: 1 })
-							}
+							onClick={() => {
+								// !inCart
+								// 	? addToCart({ id: product.id, product, quantity: 1 })
+								// 	: removeFromToCart({ id: product.id });
+							}}
 						>
-							Add to cart
+							{!inCart ? 'Add to cart' : 'Remove from cart'}
 						</Button>
 					</div>
 				</div>

@@ -23,7 +23,7 @@ export const Rating = ({
 				<span
 					key={idx}
 					className={cn(styles.star, {
-						[styles.fill]: idx < currentRating,
+						[styles.fill]: idx < currentRating
 					})}
 					onMouseEnter={() => changeDisplay(idx + 1)} //
 					onMouseLeave={() => changeDisplay(rating)} //

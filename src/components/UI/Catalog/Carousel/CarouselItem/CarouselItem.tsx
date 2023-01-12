@@ -25,7 +25,7 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 					<div className={styles.name}>{product.name}</div>
 					<div className={styles.description}>{product.description}</div>
 					<div className={styles.price}>{'Price: ' + product.price + ' $'}</div>
-					<Link href={`/product/${product.slug}`} className={styles.link}>
+					<Link className={styles.link} href={`/product/${product.slug}`}>
 						More information
 					</Link>
 				</div>

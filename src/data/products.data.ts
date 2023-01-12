@@ -7,7 +7,8 @@ export const products: IProduct[] = [
         slug: 'sushi-with-masago-caviar',
         price: 1.52,
         description: '35 g Ingredients: Rice, Nori, Masago caviar, spicy sauce. Soy sauce, ginger, wasabi are not served.',
-        images: ['/../public/images/products/sushi_with_masago_caviar.png']
+        images: ['/../public/images/products/sushi_with_masago_caviar.png'],
+        rating: [5]
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ export const products: IProduct[] = [
         slug: 'sushi-with-eel',
         price: 1.52,
         description: '30 g Ingredients: Rice, Eel, Unagi sauce, Sesame, Nori. Soy sauce, ginger, wasabi are not served.”',
-        images: ['/../public/images/products/sushi_with_eel.png']
+        images: ['/../public/images/products/sushi_with_eel.png'],
+        rating: [5]
     },
     {
         id: 3,
@@ -23,7 +25,8 @@ export const products: IProduct[] = [
         slug: 'sushi-with-tuna',
          price: 1.52,
         description: '30 g Ingredients: Rice, Salmon. Soy sauce, ginger, wasabi are not served.',
-        images: ['/../public/images/products/sushi_with_tuna.png']
+        images: ['/../public/images/products/sushi_with_tuna.png'],
+        rating: [4]
     },
     {
         id: 4,
@@ -31,6 +34,7 @@ export const products: IProduct[] = [
         slug: 'sushi-with-salmon',
         price: 1.52,
         description: '30 g Ingredients: Rice, Salmon. Soy sauce, ginger, wasabi are not served.',
-        images: ['/../public/images/products/sushi_with_salmon.png']
+        images: ['/../public/images/products/sushi_with_salmon.png'],
+        rating: [3]
     }
 ];

@@ -3,6 +3,7 @@ import { IProduct } from '../../../../types/IProduct.interface';
 import CarouselItem from './CarouselItem/CarouselItem';
 import styles from './CarouselItem/CarouselItem.module.css';
 import { useActions } from '../../../../hooks/useActions';
+import Link from 'next/link';
 import { useTypedSelector } from '../../../../hooks/useTypedSelector';
 const Carousel: FC<{ products: IProduct[] }> = ({ products }) => {
 	const { addToCart, changeQuantity } = useActions();
@@ -10,15 +11,16 @@ const Carousel: FC<{ products: IProduct[] }> = ({ products }) => {
 	return (
 		<div className={styles.carousel}>
 			{products.map((item) => (
-				<button
-					className={styles.button}
-					key={item.id}
-					onClick={() => {
-						addToCart({ id: item.id, product: item, quantity: 1 });
-					}}
-				>
-					<CarouselItem product={item} />
-				</button>
+				<div className={styles.wrapper} key={item.id}>
+					<button
+						className={styles.button}
+						onClick={() => {
+							addToCart({ id: item.id, product: item, quantity: 1 });
+						}}
+					>
+						<CarouselItem product={item} />
+					</button>
+				</div>
 			))}
 		</div>
 	);
