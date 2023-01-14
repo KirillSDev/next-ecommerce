@@ -1,0 +1,11 @@
+.star svg {
+	cursor: pointer;
+	margin-right: 5px;
+	stroke: var(--black);
+	stroke-width: 1px;
+	transition: fill 0.1s;
+}
+
+.fill svg {
+	fill: var(--back);
+}
