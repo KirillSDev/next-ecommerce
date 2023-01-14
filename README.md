@@ -1,4 +1,4 @@
-# Next.js + React Ranking App
+# Next.js + Sushi Shop
 
 ## Getting Started
 
