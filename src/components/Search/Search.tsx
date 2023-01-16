@@ -1,9 +1,19 @@
-import { DetailedHTMLProps, HTMLAttributes, useState, useEffect } from 'react';
+import React from 'react';
+import {
+	DetailedHTMLProps,
+	KeyboardEventHandler,
+	HTMLAttributes,
+	useState,
+	useEffect,
+	useRef,
+	Ref
+} from 'react';
 import styles from './Search.module.css';
 import IconSearch from '../../assets/icons/search.svg';
 import Link from 'next/link';
 import { products } from '../../data/products.data';
 import { useActions } from '../../hooks/useActions';
+import { url } from 'inspector';
 
 interface ISearchMenu
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
@@ -11,6 +21,7 @@ interface ISearchMenu
 export const SearchMenu = ({ ...props }: ISearchMenu) => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [isClick, setIsClick] = useState(false);
+	const inputRef = React.useRef<HTMLAnchorElement>(null);
 	const { addToArray } = useActions();
 	useEffect(() => {
 		setSearchTerm('');
@@ -23,8 +34,16 @@ export const SearchMenu = ({ ...props }: ISearchMenu) => {
 					placeholder='Search'
 					onChange={(e) => setSearchTerm(e.target.value)}
 					value={searchTerm}
+					onKeyDown={(event) => {
+						if (event.key == 'Enter') {
+							inputRef.current?.click(); // call Link
+							addToArray({ item: searchTerm });
+							setIsClick(!isClick);
+						}
+					}}
 				/>
 				<Link
+					ref={inputRef}
 					href={'/result'}
 					onClick={() => {
 						addToArray({ item: searchTerm });

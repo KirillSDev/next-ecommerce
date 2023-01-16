@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { Layout } from '../../src/layout/Layout';
 import { IProduct } from '../../src/types/IProduct.interface';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -47,7 +47,7 @@ const ProductDetails: FC<IProductDetails> = ({ product }) => {
 	};
 	const { addToCart, removeFromToCart } = useActions();
 	const [rating, setRating] = useState<number>(3);
-	const [inCart, setInCart] = useState<boolean>(false);
+
 	return (
 		<Layout title={product.name} description={product.description}>
 			<div className={styles.wrapper}>
@@ -90,12 +90,14 @@ const ProductDetails: FC<IProductDetails> = ({ product }) => {
 						<Button
 							apperance='unprimary'
 							onClick={() => {
-								// !inCart
-								// 	? addToCart({ id: product.id, product, quantity: 1 })
-								// 	: removeFromToCart({ id: product.id });
+								if (!item()) {
+									addToCart({ id: product.id, product, quantity: 1 });
+								} else {
+									removeFromToCart({ id: product.id });
+								}
 							}}
 						>
-							{!inCart ? 'Add to cart' : 'Remove from cart'}
+							{!item() ? 'Add to cart' : 'Remove from cart'}
 						</Button>
 					</div>
 				</div>

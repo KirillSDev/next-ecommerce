@@ -12,12 +12,7 @@ const Carousel: FC<{ products: IProduct[] }> = ({ products }) => {
 		<div className={styles.carousel}>
 			{products.map((item) => (
 				<div className={styles.wrapper} key={item.id}>
-					<button
-						className={styles.button}
-						onClick={() => {
-							addToCart({ id: item.id, product: item, quantity: 1 });
-						}}
-					>
+					<button className={styles.button}>
 						<CarouselItem product={item} />
 					</button>
 				</div>

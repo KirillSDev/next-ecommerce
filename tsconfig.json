@@ -15,6 +15,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "noImplicitThis": true
   },
   "include": ["next-env.d.ts", "svg.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

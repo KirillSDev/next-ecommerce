@@ -3,14 +3,14 @@ import { Layout } from '../../src/layout/Layout';
 import Catalog from '../../src/components/UI/Catalog/Catalog';
 import { products } from '../../src/data/products.data';
 
-const SushiPage: FC = () => {
+const RollsPage: FC = () => {
 	return (
-		<Layout title='Sushi' description='sushi'>
+		<Layout title='Rolls' description='rolls'>
 			<Catalog
-				products={products.filter((product) => product.category === 'sushi')}
+				products={products.filter((product) => product.category === 'rolls')}
 			></Catalog>
 		</Layout>
 	);
 };
 
-export default SushiPage;
+export default RollsPage;

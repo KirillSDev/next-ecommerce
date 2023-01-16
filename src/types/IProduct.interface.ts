@@ -3,6 +3,7 @@ export interface IProduct {
     name: string;
     slug: string;
     price: number;
+    category: string;
     description: string;
     images: string[];
     rating: number[]
