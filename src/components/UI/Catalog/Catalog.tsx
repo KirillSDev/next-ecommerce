@@ -10,10 +10,11 @@ const Catalog: FC<{
 	products: IProduct[];
 	props?: Catalog;
 	className?: string;
-}> = ({ products, className }) => {
+	sortType: string;
+}> = ({ products, className, sortType }) => {
 	return (
 		<div className={className}>
-			<Carousel products={products} />
+			<Carousel products={products} sortType={sortType} />
 		</div>
 	);
 };

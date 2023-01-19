@@ -80,7 +80,8 @@
 }
 .product-info {
 	padding: 5px;
-	height: 300px;
+	min-height: 300px;
+	height: fit-content;
 	margin-top: 370px;
 	max-width: 300px;
 	margin-left: -150px;

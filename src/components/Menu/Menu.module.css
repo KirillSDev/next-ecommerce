@@ -7,7 +7,12 @@
 }
 .logo {
 	fill: var(--black);
+	transition: scale 0.4s;
 }
+.logo:hover {
+	scale: 1.1;
+}
+
 .search {
 	padding-left: 40px;
 }

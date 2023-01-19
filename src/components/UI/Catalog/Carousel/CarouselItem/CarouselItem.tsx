@@ -3,13 +3,15 @@ import { IProduct } from '../../../../../types/IProduct.interface';
 import Image from 'next/image';
 import styles from './CarouselItem.module.css';
 import Link from 'next/link';
-import cn from 'classnames';
-import { Button } from '../../../../Button/Button';
+import { AnimationButton } from '../../../../Button/Button';
 import { useTypedSelector } from '../../../../../hooks/useTypedSelector';
 import { useActions } from '../../../../../hooks/useActions';
+import { useAnimation } from 'framer-motion';
+import React from 'react';
+import cn from 'classnames';
 
-const isActive = false;
 const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
+	const isActive = false;
 	const { addToCart, removeFromToCart } = useActions();
 	const cart = useTypedSelector((state) => state.cart);
 	const item = () => {
@@ -20,8 +22,10 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 			return false;
 		}
 	};
+	const controls = useAnimation();
+
 	return (
-		<div className={styles.container}>
+		<div className={styles.button}>
 			<div
 				className={cn(styles['container-header'], {
 					[styles['container-active']]: isActive
@@ -44,7 +48,9 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 					</Link>
 					<div className={styles.price}>{'Price: $ ' + product.price}</div>
 
-					<Button
+					<AnimationButton
+						exit={{ scale: 1 }}
+						animate={controls}
 						className={styles['btn-add-to-cart']}
 						apperance='unprimary'
 						onClick={() => {
@@ -53,13 +59,17 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 							} else {
 								removeFromToCart({ id: product.id });
 							}
+							controls.start({
+								scale: [1.0, 1.4, 1.0],
+								transition: { duration: 0.1 }
+							});
 						}}
 					>
 						{!item() ? 'Add to cart' : 'Remove from cart'}
-					</Button>
+					</AnimationButton>
 				</div>
 			</div>
 		</div>
 	);
 };
-export default CarouselItem;
+export default React.memo(CarouselItem);

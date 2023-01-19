@@ -11,7 +11,7 @@ export const Menu: FC = () => {
 	return (
 		<div className={styles.container}>
 			<Link href='/'>
-				<Logo alt='logo' width={100} height={40} className={styles.logo} />
+				<Logo alt='logo' width={100} height={100} className={styles.logo} />
 			</Link>
 			<SearchMenu className={styles.search} />
 			<div className={styles.navigation}>

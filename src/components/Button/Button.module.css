@@ -64,5 +64,22 @@
 }
 
 .arrowDown {
-	transform: rotate(90deg);
+	animation: rotateArrowDown 0.2s forwards;
+}
+@keyframes rotateArrowUp {
+	from {
+		transform: rotate(90deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes rotateArrowDown {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(90deg);
+	}
 }

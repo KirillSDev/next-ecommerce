@@ -1,39 +1,58 @@
 import { FC } from 'react';
 import styles from './Sorting.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import cn from 'classnames';
 import { sortingData } from './sorting.data';
+import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 
-const Sorting: FC = () => {
+const Sorting: FC<{ getSortType: (type: string) => void }> = ({
+	getSortType
+}) => {
 	const [isActiveDrop, setIsActiveDrop] = useState(false);
 	const [sortType, setSortType] = useState('Default sorting');
+
+	const controls = useAnimation();
+	useEffect(() => {
+		getSortType(sortType);
+	}, [sortType]);
 	return (
 		<div className={styles.grid}>
 			<div className={styles.container}>
 				<button
 					className={styles['drop-btn']}
-					onClick={() => setIsActiveDrop(!isActiveDrop)}
+					onClick={() => {
+						controls.start({ opacity: [0, 1], visibility: 'visible' });
+						isActiveDrop &&
+							controls.start({ opacity: [1, 0], visibility: 'hidden' });
+						setIsActiveDrop(!isActiveDrop);
+					}}
 				>
 					{sortType}
 				</button>
-				<div
-					className={cn(styles['dropdown-content'], {
-						[styles['dropdown-content-active']]: isActiveDrop === true
-					})}
-				>
-					{sortingData.map((sort) => (
-						<a
-							href='#'
-							key={sort.value}
-							onClick={() => {
-								setSortType(sort.name);
-								setIsActiveDrop(!isActiveDrop);
-							}}
-						>
-							{sort.name}
-						</a>
-					))}
-				</div>
+				<AnimatePresence>
+					<motion.div
+						animate={controls}
+						initial={{ visibility: 'hidden' }}
+						className={cn(styles['dropdown-content'])}
+					>
+						{sortingData.map((sort) => (
+							<a
+								href='#'
+								className={styles['dropdown-content-active']}
+								key={sort.value}
+								onClick={() => {
+									setSortType(sort.name);
+
+									setIsActiveDrop(!isActiveDrop);
+									isActiveDrop &&
+										controls.start({ opacity: [1, 0], visibility: 'hidden' });
+								}}
+							>
+								{sort.name}
+							</a>
+						))}
+					</motion.div>
+				</AnimatePresence>
 			</div>
 		</div>
 	);

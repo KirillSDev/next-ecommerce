@@ -1,6 +1,5 @@
 import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react';
 import styles from './Heading.module.css';
-import Sorting from '../Sorting/Sorting';
 import cn from 'classnames';
 
 interface IHeading

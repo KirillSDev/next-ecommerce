@@ -20,7 +20,6 @@
 }
 .dropdown-content {
 	margin-top: 0px;
-	display: none;
 	text-align: start;
 	position: absolute;
 	background-color: var(--black);
@@ -29,10 +28,6 @@
 	color: var(--white);
 	right: 0;
 	border-radius: 10px;
-}
-.dropdown-content-active {
-	display: block;
-	animation: showSort 0.2s linear;
 }
 
 .dropdown-content a {
@@ -43,7 +38,6 @@
 	border-radius: 10px;
 	background-color: rgb(49, 47, 47);
 }
-
 @keyframes showSort {
 	0% {
 		opacity: 0;

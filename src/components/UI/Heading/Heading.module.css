@@ -4,8 +4,8 @@
 
 .heading {
 	/* background-image: url('../../../assets/clarence.svg');
-	animation: Heading 15s infinite ease-in-out; */
-	border-radius: 10px;
+	animation: Heading 18s infinite; */
+	border-radius: 20px;
 	text-align: end;
 	padding: 10px;
 	font-size: 40px;
@@ -23,5 +23,14 @@
 	}
 	100% {
 		background-size: 1000px;
+	}
+}
+@keyframes dash {
+	0%,
+	50% {
+		stroke-dashoffset: 100%;
+	}
+	to {
+		stroke-dashoffset: 0;
 	}
 }

@@ -1,19 +1,9 @@
 import React from 'react';
-import {
-	DetailedHTMLProps,
-	KeyboardEventHandler,
-	HTMLAttributes,
-	useState,
-	useEffect,
-	useRef,
-	Ref
-} from 'react';
+import { DetailedHTMLProps, HTMLAttributes, useState, useEffect } from 'react';
 import styles from './Search.module.css';
 import IconSearch from '../../assets/icons/search.svg';
 import Link from 'next/link';
-import { products } from '../../data/products.data';
 import { useActions } from '../../hooks/useActions';
-import { url } from 'inspector';
 
 interface ISearchMenu
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}

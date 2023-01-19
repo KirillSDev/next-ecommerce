@@ -5,6 +5,18 @@ body {
 	color: var(--black);
 	background-color: #f5f6f8;
 }
+*::-webkit-scrollbar {
+	width: 15px;
+}
+*::-webkit-scrollbar-track {
+	background: #05050518;
+	border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #0f0e0f21;
+	border-radius: 10px;
+}
 .not-found-page {
 	display: flex;
 	align-items: center;

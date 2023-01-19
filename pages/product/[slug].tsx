@@ -1,14 +1,15 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useState } from 'react';
 import { Layout } from '../../src/layout/Layout';
 import { IProduct } from '../../src/types/IProduct.interface';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Heading from '../../src/components/UI/Heading/Heading';
 import { products } from '../../src/data/products.data';
-import { Button, Rating } from '../../src/components';
+import { AnimationButton, Rating } from '../../src/components';
 import Image from 'next/image';
 import styles from './[slug].module.css';
 import { useActions } from '../../src/hooks/useActions';
 import { useTypedSelector } from '../../src/hooks/useTypedSelector';
+import { useAnimation } from 'framer-motion';
 
 export interface IProductDetails {
 	product: IProduct;
@@ -47,7 +48,7 @@ const ProductDetails: FC<IProductDetails> = ({ product }) => {
 	};
 	const { addToCart, removeFromToCart } = useActions();
 	const [rating, setRating] = useState<number>(3);
-
+	const controls = useAnimation();
 	return (
 		<Layout title={product.name} description={product.description}>
 			<div className={styles.wrapper}>
@@ -87,7 +88,8 @@ const ProductDetails: FC<IProductDetails> = ({ product }) => {
 						/>
 					</div>
 					<div className={styles.button}>
-						<Button
+						<AnimationButton
+							animate={controls}
 							apperance='unprimary'
 							onClick={() => {
 								if (!item()) {
@@ -95,10 +97,15 @@ const ProductDetails: FC<IProductDetails> = ({ product }) => {
 								} else {
 									removeFromToCart({ id: product.id });
 								}
+								controls.start({
+									paddingLeft: [40, 50, 40],
+									paddingRight: [40, 50, 40],
+									transition: { duration: 0.2 }
+								});
 							}}
 						>
 							{!item() ? 'Add to cart' : 'Remove from cart'}
-						</Button>
+						</AnimationButton>
 					</div>
 				</div>
 			</div>
