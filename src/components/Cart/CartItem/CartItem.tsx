@@ -1,8 +1,9 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { ICartItem } from '../../../types/ICartItem.interface';
 import Image from 'next/image';
 import styles from './CartItem.module.css';
 import { CartActions } from '../CartActions/CartActions';
+import React from 'react';
 
 const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 	return (
@@ -13,6 +14,7 @@ const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 				alt={item.product.name}
 				width={150}
 				height={100}
+				quality={30}
 			/>
 			<div className={styles.name}>{item.product.name}</div>
 			<div className={styles.quantity}>{'Quintity: ' + item.quantity}</div>
@@ -25,4 +27,4 @@ const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 	);
 };
 
-export default CartItem;
+export default React.memo(CartItem);

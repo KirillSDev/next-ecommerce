@@ -1,9 +1,11 @@
-import { FC, useState } from 'react';
-
-import Catalog from '../../components/UI/Catalog/Catalog';
-import Heading from '../../components/UI/Heading/Heading';
-import Sorting from '../../components/UI/Sorting/Sorting';
-
+import { FC, useState, Suspense } from 'react';
+import dynamic from 'next/dynamic';
+import React from 'react';
+const Heading = React.lazy(() => import('../../components/UI/Heading/Heading'));
+const Carousel = React.lazy(
+	() => import('../../components/UI/Catalog/Catalog')
+);
+const Sorting = React.lazy(() => import('../../components/UI/Sorting/Sorting'));
 import { products } from '../../data/products.data';
 import styles from './Home.module.css';
 
@@ -13,16 +15,20 @@ export const MainPage: FC = () => {
 		setSortType(type);
 	};
 	return (
-		<div>
-			<Heading>
-				Our new taste <br /> is your new emotions
-			</Heading>
-			<Sorting getSortType={getSortType}></Sorting>
-			<Catalog
-				products={products}
-				sortType={sortType}
-				className={styles.catalog}
-			/>
-		</div>
+		<>
+			<Suspense
+				fallback={
+					<div className='wrapper-spin'>
+						<div className='spin-loading'></div>
+					</div>
+				}
+			>
+				<Heading>
+					Our new taste <br /> is your new emotions
+				</Heading>
+				<Sorting getSortType={getSortType}></Sorting>
+				<Carousel products={products} sortType={sortType} />
+			</Suspense>
+		</>
 	);
 };

@@ -35,6 +35,7 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 					className={styles['item-image']}
 					src={product.images[0]}
 					alt={product.name}
+					loading={'lazy'}
 					width={220}
 					height={150}
 				></Image>
@@ -72,4 +73,4 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 		</div>
 	);
 };
-export default React.memo(CarouselItem);
+export default CarouselItem;

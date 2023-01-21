@@ -10,7 +10,7 @@ interface IHeading
 const Heading: FC<IHeading> = ({ children, ...props }) => {
 	return (
 		<div className={cn(styles.container, { ...props })}>
-			<h1 className={styles.heading}>{children}</h1>;
+			<h1 className={styles.heading}>{children}</h1>
 		</div>
 	);
 };

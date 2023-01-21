@@ -14,7 +14,7 @@
 	text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.6);
 }
 
-@keyframes Heading {
+/* @keyframes Heading {
 	0% {
 		background-size: 1000px;
 	}
@@ -33,4 +33,4 @@
 	to {
 		stroke-dashoffset: 0;
 	}
-}
+} */

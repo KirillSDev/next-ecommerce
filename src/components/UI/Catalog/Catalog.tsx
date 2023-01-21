@@ -10,7 +10,7 @@ const Catalog: FC<{
 	products: IProduct[];
 	props?: Catalog;
 	className?: string;
-	sortType: string;
+	sortType?: string;
 }> = ({ products, className, sortType }) => {
 	return (
 		<div className={className}>

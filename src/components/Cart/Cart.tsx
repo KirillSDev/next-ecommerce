@@ -5,6 +5,7 @@ import { AnimationButton } from '../Button/Button';
 import { Button } from '../Button/Button';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
+import React from 'react';
 
 const Cart: FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -15,12 +16,14 @@ const Cart: FC = () => {
 	);
 
 	const controls = useAnimation();
+
 	useEffect(() => {
 		if (isOpen && cart.length === 0)
 			setTimeout(() => {
 				setIsOpen(!isOpen);
 			}, 2000);
 	});
+
 	return (
 		<div className={styles.cart}>
 			<AnimatePresence>
@@ -58,38 +61,52 @@ const Cart: FC = () => {
 					>
 						<div className={styles.containerCart}>
 							<div className={styles.absoluteCart}>
-								<AnimatePresence>
-									{cart.length ? (
-										<AnimatePresence>
-											{cart.map((cart) => {
-												return (
-													<motion.div
-														key={cart.id}
-														initial={{ height: 0, opacity: 0 }}
-														animate={{ height: 'auto', opacity: 1 }}
-														exit={{ height: 0, opacity: 0 }}
-														transition={{ duration: 0.2 }}
-													>
-														<CartItem item={cart} />
-													</motion.div>
-												);
-											})}
-											<div>
-												<div className={styles.total}>
-													<span>Total:</span>
-													<span>{'$' + total.toFixed(2)}</span>
-												</div>
-												<Button apperance='green' className={styles.checkout}>
+								{cart.length ? (
+									<AnimatePresence>
+										<motion.button
+											key='btn'
+											exit={{ opacity: [1, 0] }}
+											className={styles['close-btn']}
+											onClick={() => setIsOpen(!isOpen)}
+										>
+											X
+										</motion.button>
+										{cart.map((cart) => {
+											return (
+												<motion.div
+													key={cart.id}
+													initial={{ height: 0, opacity: 0 }}
+													animate={{ height: 'auto', opacity: 1 }}
+													exit={{ height: 0, opacity: 0 }}
+													transition={{ duration: 0.2 }}
+												>
+													<CartItem item={cart} />
+												</motion.div>
+											);
+										})}
+										<div>
+											<div className={styles.total}>
+												<span>Total:</span>
+												<span>{'$' + total.toFixed(2)}</span>
+											</div>
+
+											<section>
+												<Button
+													apperance='green'
+													type='submit'
+													className={styles.checkout}
+													role='link'
+												>
 													Checkout
 												</Button>
-											</div>
-										</AnimatePresence>
-									) : (
-										<AnimatePresence>
-											<div className={styles['cart-empty']}>Cart is empty</div>
-										</AnimatePresence>
-									)}
-								</AnimatePresence>
+											</section>
+										</div>
+									</AnimatePresence>
+								) : (
+									<AnimatePresence>
+										<div className={styles['cart-empty']}>Cart is empty</div>
+									</AnimatePresence>
+								)}
 							</div>
 						</div>
 					</motion.div>

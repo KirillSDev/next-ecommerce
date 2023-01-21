@@ -6,18 +6,22 @@ import Logo from '../../assets/logo.svg';
 import styles from './Menu.module.css';
 import { SearchMenu } from '../Search/Search';
 import Cart from '../Cart/Cart';
+import HeaderMobile from '../HeaderMobile/HeaderMobile';
 
 export const Menu: FC = () => {
 	return (
-		<div className={styles.container}>
-			<Link href='/'>
-				<Logo alt='logo' width={100} height={100} className={styles.logo} />
-			</Link>
-			<SearchMenu className={styles.search} />
-			<div className={styles.navigation}>
-				{menuData.map((item) => {
-					return <MenuItem key={item.link} item={item} />;
-				})}
+		<div>
+			<div className={styles.container}>
+				<Link href='/'>
+					<Logo alt='logo' width={100} height={100} className={styles.logo} />
+				</Link>
+				<SearchMenu className={styles.search} />
+				<button className={styles.button}>Hello</button>
+				<div className={styles.sidepanel}>
+					{menuData.map((item) => {
+						return <MenuItem key={item.link} item={item} />;
+					})}
+				</div>
 				<div className={styles.cart}>
 					<Cart></Cart>
 				</div>

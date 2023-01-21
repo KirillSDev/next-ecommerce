@@ -1,18 +1,21 @@
-import { FC, useEffect } from 'react';
+import { FC, useCallback, useEffect, useMemo } from 'react';
 import { IProduct } from '../../../../types/IProduct.interface';
-import CarouselItem from './CarouselItem/CarouselItem';
+import dynamic from 'next/dynamic';
+const CarouselItem = dynamic(() => import('./CarouselItem/CarouselItem'));
+
 import styles from './CarouselItem/CarouselItem.module.css';
 
 import { useTypedSelector } from '../../../../hooks/useTypedSelector';
 import { motion, useAnimation } from 'framer-motion';
 import React from 'react';
 
-const Carousel: FC<{ products: IProduct[]; sortType: string }> = ({
+const Carousel: FC<{ products: IProduct[]; sortType?: string }> = ({
 	products,
-	sortType
+	sortType = 'Newest'
 }) => {
 	const search = useTypedSelector((state) => state.search);
 	const controls = useAnimation();
+
 	const sortTypeFunc = (sort: string) => {
 		switch (sort) {
 			case 'Price: Low to High':
@@ -43,26 +46,29 @@ const Carousel: FC<{ products: IProduct[]; sortType: string }> = ({
 			opacity: [0, 1]
 		});
 	}, [sortType, search.item]);
+	const catalogProduct: any = useMemo(() => {
+		return sortTypeFunc(sortType).map((item, index) => (
+			<motion.div
+				initial={{
+					y: -100,
+					opacity: 0
+				}}
+				transition={{ delay: index / 10 }}
+				className={styles.wrapper}
+				animate={controls}
+				key={item.id}
+			>
+				<div className={styles.button}>
+					<CarouselItem product={item} />
+				</div>
+			</motion.div>
+		));
+	}, [sortType]);
 	return (
 		<motion.div viewport={{ amount: 0 }} className={styles.carousel}>
-			{sortTypeFunc(sortType).map((item, index) => (
-				<motion.div
-					initial={{
-						y: -100,
-						opacity: 0
-					}}
-					transition={{ delay: index / 10 }}
-					className={styles.wrapper}
-					animate={controls}
-					key={item.id}
-				>
-					<div className={styles.button}>
-						<CarouselItem product={item} />
-					</div>
-				</motion.div>
-			))}
+			{catalogProduct}
 		</motion.div>
 	);
 };
 
-export default React.memo(Carousel);
+export default Carousel;

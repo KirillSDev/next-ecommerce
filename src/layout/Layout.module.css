@@ -45,7 +45,7 @@
 	color: var(--white);
 }
 
-@media (max-width: 730px) {
+@media (max-width: 814px) {
 	.container {
 		grid-template-columns: 1fr;
 		grid-template-rows: auto 1fr;

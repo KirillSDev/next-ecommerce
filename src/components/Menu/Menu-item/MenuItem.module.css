@@ -1,9 +1,6 @@
 .item {
-	position: relative;
 	cursor: pointer;
-	display: grid;
-	justify-items: center;
-	transition: color 0.2s;
+	position: relative;
 }
 .item:hover {
 	color: rgb(78, 74, 74);

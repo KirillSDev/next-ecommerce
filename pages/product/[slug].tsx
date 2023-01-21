@@ -1,15 +1,14 @@
-import { FC, useState } from 'react';
+import { FC, Suspense, useEffect, useMemo, useState } from 'react';
 import { Layout } from '../../src/layout/Layout';
 import { IProduct } from '../../src/types/IProduct.interface';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Heading from '../../src/components/UI/Heading/Heading';
 import { products } from '../../src/data/products.data';
-import { AnimationButton, Rating } from '../../src/components';
 import Image from 'next/image';
 import styles from './[slug].module.css';
-import { useActions } from '../../src/hooks/useActions';
-import { useTypedSelector } from '../../src/hooks/useTypedSelector';
-import { useAnimation } from 'framer-motion';
+import React from 'react';
+import InfoProduct from '../../src/components/InfoProductSlug/InfoProduct';
+import { useRouter } from 'next/router';
 
 export interface IProductDetails {
 	product: IProduct;
@@ -37,18 +36,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const ProductDetails: FC<IProductDetails> = ({ product }) => {
-	const cart = useTypedSelector((state) => state.cart);
-	const item = () => {
-		const cartItem = cart.items.find((item) => item.id === product.id);
-		if (cartItem) {
-			return true;
-		} else {
-			return false;
-		}
-	};
-	const { addToCart, removeFromToCart } = useActions();
-	const [rating, setRating] = useState<number>(3);
-	const controls = useAnimation();
 	return (
 		<Layout title={product.name} description={product.description}>
 			<div className={styles.wrapper}>
@@ -76,38 +63,7 @@ const ProductDetails: FC<IProductDetails> = ({ product }) => {
 					<div>40 g</div>
 					<div>50 g</div>
 				</div>
-				<div className={styles['product-info']}>
-					<div>
-						<div className={styles.name}>{product.name}</div>
-						<div className={styles.description}>{product.description}</div>
-						<div className={styles.price}>{'Price: $ ' + product.price}</div>
-						<Rating
-							className={styles.rating}
-							rating={rating}
-							setRating={setRating}
-						/>
-					</div>
-					<div className={styles.button}>
-						<AnimationButton
-							animate={controls}
-							apperance='unprimary'
-							onClick={() => {
-								if (!item()) {
-									addToCart({ id: product.id, product, quantity: 1 });
-								} else {
-									removeFromToCart({ id: product.id });
-								}
-								controls.start({
-									paddingLeft: [40, 50, 40],
-									paddingRight: [40, 50, 40],
-									transition: { duration: 0.2 }
-								});
-							}}
-						>
-							{!item() ? 'Add to cart' : 'Remove from cart'}
-						</AnimationButton>
-					</div>
-				</div>
+				<InfoProduct product={product}></InfoProduct>
 			</div>
 		</Layout>
 	);

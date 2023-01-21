@@ -1,4 +1,3 @@
-import styles from './Sidebar.module.css';
 import { SidebarProps } from './Sidebar.props';
 import { Menu } from '../../components/Menu/Menu';
 

@@ -10,7 +10,6 @@ const Sorting: FC<{ getSortType: (type: string) => void }> = ({
 }) => {
 	const [isActiveDrop, setIsActiveDrop] = useState(false);
 	const [sortType, setSortType] = useState('Default sorting');
-
 	const controls = useAnimation();
 	useEffect(() => {
 		getSortType(sortType);
