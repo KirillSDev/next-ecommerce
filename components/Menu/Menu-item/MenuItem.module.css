@@ -1,0 +1,21 @@
+.item {
+	cursor: pointer;
+	position: relative;
+}
+
+.item:hover {
+	color: rgb(78 74 74);
+}
+
+.item::before {
+	content: "";
+	position: absolute;
+	top: 20px;
+	width: 0%;
+	border-bottom: 2px solid var(--black);
+	transition: width 0.2s;
+}
+
+.item:hover::before {
+	width: 110%;
+}

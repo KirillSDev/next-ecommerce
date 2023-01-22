@@ -1,0 +1,26 @@
+.container {
+	margin: 25px 32px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 22px;
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	gap: 40px;
+}
+
+.linkCursor {
+	cursor: pointer;
+	transition: color 0.2s;
+}
+
+.linkCursor:hover {
+	color: var(--gray);
+}
+
+@media (max-width: 730px) {
+	.container {
+		grid-template-columns: 1fr;
+		gap: 10px;
+		justify-items: center;
+	}
+}

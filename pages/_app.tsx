@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { persistor, store } from '../src/store/store';
+import { persistor, store } from '../store/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { useState } from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress';
-import Loader from '../src/components/Loader/Loader';
+import Loader from '../components/Loader/Loader';
 
 import 'nprogress/nprogress.css'; //styles of nprogress
 

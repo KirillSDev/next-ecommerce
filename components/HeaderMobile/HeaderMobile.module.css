@@ -1,0 +1,48 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navigation {
+	margin: 0 10px;
+}
+
+.close-btn {
+	padding: 10px;
+	margin-top: 20px;
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 20px;
+	margin-left: 50px;
+	background-color: var(--back);
+}
+
+.cart {
+	margin: 10px;
+	z-index: 20;
+}
+
+.sidepanel {
+	height: 100vh;
+	width: 0;
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	background-color: rgb(0 0 0);
+	font-size: 25px;
+	color: var(--white);
+	overflow-x: hidden;
+	padding-top: 60px;
+	overflow-y: hidden;
+}
+
+.sidepanel a {
+	padding: 20px;
+	text-decoration: none;
+	font-size: 25px;
+	color: var(--back);
+	display: block;
+}

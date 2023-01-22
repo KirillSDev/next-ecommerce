@@ -1,5 +1,5 @@
-import { Layout } from '../src/layout/Layout';
-import { MainPage } from '../src/screens/Home/Home';
+import { Layout } from '../layout/Layout';
+import { MainPage } from '../layout/Home/Home';
 
 export default function Home(): JSX.Element {
 	return (

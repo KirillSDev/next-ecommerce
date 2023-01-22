@@ -1,0 +1,42 @@
+.wrapper {
+	background-color: var(--back);
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+	justify-content: center;
+	align-items: center;
+}
+
+.colorful {
+	position: absolute;
+	width: 44.8px;
+	height: 44.8px;
+	border-radius: 50%;
+	margin-top: -33.6px;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	transform-origin: 50% 116.5%;
+	animation: colorful-253w2v 2s infinite linear;
+}
+
+.colorful::before {
+	content: "";
+	min-width: 233%;
+	height: 233%;
+	background:
+		radial-gradient(farthest-side, #000 90%, #0000) top,
+		radial-gradient(farthest-side, #000 90%, #0000) left,
+		radial-gradient(farthest-side, #FFD82E 90%, #0000) bottom,
+		radial-gradient(farthest-side, #000 90%, #0000) right;
+	background-size: 43% 43%;
+	background-repeat: no-repeat;
+	animation: inherit;
+	animation-direction: reverse;
+}
+
+@keyframes colorful-253w2v {
+	100% {
+		transform: rotate(360deg);
+	}
+}

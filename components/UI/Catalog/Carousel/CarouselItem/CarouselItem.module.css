@@ -1,0 +1,124 @@
+.carousel {
+	margin: 100px 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	gap: 70px 20px;
+	justify-items: center;
+	padding-bottom: 40px;
+}
+
+.container-header {
+	position: relative;
+	transition:
+		background 0.2s linear,
+		transform 0.2s ease-out,
+		opacity 0.1s linear,
+		box-shadow 0.1s;
+	cursor: pointer;
+	justify-items: center;
+	padding: 5px;
+	background-image: url("../../../../../assets/vorderrhein.svg");
+	background-size: cover;
+	padding-top: 0;
+	min-height: 270px;
+	max-width: 300px;
+	height: fit-content;
+	font-weight: 400;
+	border-radius: 20px;
+	font-size: 14px;
+	line-height: 14px;
+
+	/* background-color: var(--green-light); */
+	background-color: #F1FAEEA8;
+	border: 1px solid var(--black);
+	box-shadow: 10px 10px 3px rgb(0 0 0 / 10%);
+}
+
+.container-header:hover {
+	background-image: url("../../../../../assets/vorderrhein.svg");
+	background-size: cover;
+	background-color: #F1FAEE;
+	transform: scale(1.1);
+	box-shadow: 1px 2px 3px rgb(0 0 0 / 10%);
+
+	/* opacity: 0.5; */
+}
+
+.container-header:hover::after {
+	position: absolute;
+
+	/* content: 'Add to Cart'; */
+	font-size: 20px;
+	font-weight: bold;
+	background-color: rgb(206 158 54);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.item-image {
+	margin-top: -80px;
+}
+
+.container-info {
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+	height: 200px;
+	padding: 10px;
+	border-radius: 10px 10px 20px 20px;
+	justify-items: center;
+}
+
+.name {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.price {
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: 700;
+	opacity: 0.9;
+}
+
+.description {
+	opacity: 0.9;
+	text-align: center;
+	font-style: oblique;
+}
+
+.link {
+	margin-top: 10px;
+	text-align: right;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.link:hover {
+	color: rgb(241 241 241);
+	text-shadow: 1px 1px rgb(12 8 8 / 29.5%);
+}
+
+.button {
+	max-width: 270px;
+	background: none;
+	text-align: center;
+	border: none;
+	position: relative;
+	cursor: pointer;
+}
+
+@media (max-width: 910px) {
+	.carousel {
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+	}
+}
+
+@media (max-width: 660px) {
+	.carousel {
+		grid-template-columns: repeat(1, 1fr);
+		justify-items: center;
+	}
+}
