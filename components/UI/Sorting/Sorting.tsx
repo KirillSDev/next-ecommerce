@@ -13,7 +13,7 @@ const Sorting: FC<{ getSortType: (type: string) => void }> = ({
 	const controls = useAnimation();
 	useEffect(() => {
 		getSortType(sortType);
-	}, [sortType]);
+	}, [getSortType, sortType]);
 	return (
 		<div className={styles.grid}>
 			<div className={styles.container}>
