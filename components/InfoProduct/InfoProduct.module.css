@@ -1,0 +1,53 @@
+.button {
+	display: flex;
+	justify-content: center;
+	z-index: 60;
+	color: var(--white);
+	padding-top: 10px;
+}
+
+.button > button {
+	padding: 10px 40px;
+}
+
+.product-info {
+	padding: 5px;
+	min-height: 300px;
+	height: fit-content;
+	max-width: 300px;
+	border-radius: 50px 50px 10px;
+	grid-area: product-info;
+	background-color: var(--white);
+	margin: 370px 20px 30px -150px;
+}
+
+.name {
+	padding-top: 20px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.price {
+	padding-top: 20px;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.description {
+	padding-top: 20px;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.rating {
+	padding-top: 10px;
+}
+
+@media (max-width: 810px) {
+	.product-info {
+		margin: 0;
+		padding: 5;
+		display: block;
+		max-width: 65%;
+	}
+}

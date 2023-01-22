@@ -1,0 +1,89 @@
+.button {
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	border: none;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 10px;
+	font-weight: 400;
+	border-radius: 5px;
+	font-size: 14px;
+	line-height: 14px;
+}
+
+.primary {
+	position: relative;
+	background-color: var(--primary);
+	color: var(--black);
+	border: 1px solid var(--black);
+	transition: background-color 0.1s linear;
+}
+
+.primary svg {
+	fill: var(--black);
+}
+
+.primary:hover {
+	background-color: var(--white);
+}
+
+.unprimary {
+	background-color: var(--black);
+	color: var(--white);
+	border: 1px solid var(--black);
+	transition: all 0.3s ease;
+}
+
+.green {
+	background-color: var(--green-light);
+	border: 1px solid var(--black);
+	transition: all 0.3s ease;
+}
+
+.green:hover {
+	background-color: var(--white);
+	color: var(--black);
+}
+
+.unprimary svg {
+	fill: var(--white);
+}
+
+.unprimary:hover {
+	background-color: var(--white);
+	color: var(--black);
+}
+
+.unprimary:hover svg {
+	fill: var(--black);
+}
+
+.arrow {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.arrowDown {
+	animation: rotate-arrow-down 0.2s forwards;
+}
+
+@keyframes rotate-arrow-up {
+	from {
+		transform: rotate(90deg);
+	}
+
+	to {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes rotate-arrow-down {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(90deg);
+	}
+}

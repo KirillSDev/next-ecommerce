@@ -1,10 +1,35 @@
 html,
 body {
+	font-family: Montserrat, sans-serif;
 	margin: 0;
 	padding: 0;
 	color: var(--black);
-	background-color: #f5f6f8;
+	background-color: #F5F6F8;
 }
+
+* {
+	box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+	width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #05050518;
+	border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #0F0E0F21;
+	border-radius: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 .not-found-page {
 	display: flex;
 	align-items: center;
@@ -13,6 +38,7 @@ body {
 	background-color: var(--back);
 	text-align: center;
 }
+
 .not-found-page h1 {
 	font-size: 40px;
 }
@@ -20,29 +46,51 @@ body {
 .not-found-page a {
 	font-size: 20px;
 }
+
 .not-found-page a:hover {
 	color: var(--orange);
 }
+
 li {
 	list-style-type: none;
 }
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
-* {
-	box-sizing: border-box;
-}
 
 :root {
-	--black: #000000;
-	--white: #f8f8f8;
-	--orange: #f77f00;
+	--black: #000;
+	--white: #F8F8F8;
+	--orange: #F77F00;
 	--gray: #969696;
-	--primary: #c5c5c4;
-	--back: #ffbe0b;
-	--green: #0b1408;
-	--green-light: rgb(138, 211, 148);
-	--font-family: 'Poppins', sans-serif;
+	--primary: #C5C5C4;
+	--back: #FFBE0B;
+	--green: #0B1408;
+	--green-light: rgb(138 211 148);
+	--font-family: "Poppins", sans-serif;
+}
+
+.wrapper-spin {
+	height: 100vh;
+	width: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--back);
+	z-index: 10;
+}
+
+.spin-loading {
+	height: 100px;
+	width: 100px;
+	margin: 0 auto;
+	animation: rotation 0.5s infinite linear;
+	border: 6px solid var(--black);
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(359deg);
+	}
 }

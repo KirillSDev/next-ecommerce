@@ -1,0 +1,36 @@
+.container {
+	z-index: 500;
+}
+
+.heading {
+	/* background-image: url('../../../assets/clarence.svg');
+	animation: Heading 18s infinite; */
+	border-radius: 20px;
+	text-align: end;
+	padding: 10px;
+	font-size: 40px;
+	color: rgb(241 241 241);
+	font-weight: bolder;
+	text-shadow: 4px 4px 1px rgb(0 0 0 / 60%);
+}
+
+/* @keyframes Heading {
+	0% {
+		background-size: 1000px;
+	}
+	50% {
+		background-size: 3000px;
+	}
+	100% {
+		background-size: 1000px;
+	}
+}
+@keyframes dash {
+	0%,
+	50% {
+		stroke-dashoffset: 100%;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+} */

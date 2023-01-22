@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
 	reactStrictMode: true,
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -30,4 +31,7 @@ const nextConfig = {
 	}
 };
 
-module.exports = nextConfig;
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true'
+});
+module.exports = withBundleAnalyzer(nextConfig);

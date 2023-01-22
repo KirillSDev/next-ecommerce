@@ -1,0 +1,13 @@
+.header-mobile {
+	display: none;
+}
+
+@media (max-width: 810px) {
+	.header-desktop {
+		display: none;
+	}
+
+	.header-mobile {
+		display: block;
+	}
+}
