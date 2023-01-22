@@ -1,14 +1,13 @@
-import { FC, Suspense, useEffect, useMemo, useState } from 'react';
-import { Layout } from '../../src/layout/Layout';
-import { IProduct } from '../../src/types/IProduct.interface';
+import { FC } from 'react';
+import { Layout } from '../../layout/Layout';
+import { IProduct } from '../../types/IProduct.interface';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Heading from '../../src/components/UI/Heading/Heading';
-import { products } from '../../src/data/products.data';
+import Heading from '../../components/UI/Heading/Heading';
+import { products } from '../../data/products.data';
 import Image from 'next/image';
 import styles from './[slug].module.css';
 import React from 'react';
-import InfoProduct from '../../src/components/InfoProductSlug/InfoProduct';
-import { useRouter } from 'next/router';
+import InfoProduct from '../../components/InfoProduct/InfoProduct';
 
 export interface IProductDetails {
 	product: IProduct;
@@ -34,8 +33,25 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		}
 	};
 };
+const sizeImage = (property: string): number => {
+	if (property === 'width') {
+		if (window.innerWidth < 810) {
+			return 410;
+		} else {
+			return 450;
+		}
+	} else {
+		if (window.innerWidth < 810) {
+			return 270;
+		} else {
+			return 300;
+		}
+	}
+};
 
 const ProductDetails: FC<IProductDetails> = ({ product }) => {
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
+
 	return (
 		<Layout title={product.name} description={product.description}>
 			<div className={styles.wrapper}>
@@ -50,11 +66,12 @@ const ProductDetails: FC<IProductDetails> = ({ product }) => {
 				<div className={styles['container-info']}>
 					<div>
 						<Image
+							priority={true}
 							className={styles['product-image']}
 							alt={product.name}
 							src={product.images[0]}
-							width={450}
-							height={300}
+							width={sizeImage('width')}
+							height={sizeImage('height')}
 						></Image>
 					</div>
 				</div>
@@ -63,7 +80,9 @@ const ProductDetails: FC<IProductDetails> = ({ product }) => {
 					<div>40 g</div>
 					<div>50 g</div>
 				</div>
-				<InfoProduct product={product}></InfoProduct>
+				<div className={styles['container-product-info']}>
+					<InfoProduct product={product}></InfoProduct>
+				</div>
 			</div>
 		</Layout>
 	);

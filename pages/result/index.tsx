@@ -1,13 +1,12 @@
-import { FC, useEffect } from 'react';
-import { Layout } from '../../src/layout/Layout';
-import Catalog from '../../src/components/UI/Catalog/Catalog';
-import { products } from '../../src/data/products.data';
-import { useTypedSelector } from '../../src/hooks/useTypedSelector';
-import { useActions } from '../../src/hooks/useActions';
+import { FC } from 'react';
+import { Layout } from '../../layout/Layout';
+import Catalog from '../../components/UI/Catalog/Catalog';
+import { products } from '../../data/products.data';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useActions } from '../../hooks/useActions';
 import styles from './ResultPage.module.css';
-import Link from 'next/link';
 
-const ResultPage = () => {
+const ResultPage: FC = () => {
 	const searchResult = useTypedSelector((state) => state.search);
 	const { removeFromArray } = useActions();
 	const findElement = (name: string) => {

@@ -1,0 +1,22 @@
+.cart-actions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.button {
+	font-size: large;
+	padding: 5px 15px;
+}
+
+.button-unclick {
+	padding: 5px 15px;
+}
+
+.remove {
+	cursor: pointer;
+	border: none;
+	background: none;
+	color: var(--orange);
+}
