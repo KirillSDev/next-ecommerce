@@ -1,13 +1,46 @@
-# Next.js + Sushi Shop
+# Sushi Shop
 
-## Getting Started
+## Description
 
-First, run the development server:
+SushiShop is an online store for sushi and rolls.
+[sushishop.app](https://nextjs-ecommerce-sushi.vercel.app)
+
+![Image alt](https://github.com/kirillsdev/next-ecommerce/raw/main/public/first-banner.png)
+![Image alt](https://github.com/kirillsdev/next-ecommerce/raw/main/public/second-banner.png)
+
+
+### Currently the project uses
+* Next.js
+* TypeScript
+* Framer Motion
+
+### What is already on the site
+<ul>
+<li>Responsive web design</li>
+<li>Shopping cart</li>
+<li>Sorting products</li>
+<li>Beautiful animation</li>
+<li>Product pages</li>
+<li>Product search</li>
+</ul>
+
+### Build && Launch
+The project requires NodeJS >= 16 to run, you can change the version with:
+
+
+```bash
+nvm use
+```
+Install all the packages / dependencies contained in this project:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
