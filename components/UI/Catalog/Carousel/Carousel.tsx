@@ -21,7 +21,7 @@ const Carousel: FC<{ products: IProduct[]; sortType?: string }> = ({
 			y: [-100, 0],
 			opacity: [0, 1]
 		});
-	}, [sortType, search.item]);
+	}, [sortType, search.item, controls]);
 
 	const catalogProduct: JSX.Element[] = useMemo(() => {
 		const sortTypeFunc = (sort: string) => {

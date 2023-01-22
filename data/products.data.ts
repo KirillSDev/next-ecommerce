@@ -9,7 +9,7 @@ export const products: IProduct[] = [
         price: 1.55,
         category: 'sushi',
         description: '35 g Ingredients: Rice, Nori, Masago caviar, spicy sauce. Soy sauce, ginger, wasabi are not served.',
-        images: ['/../public/images/products/sushi/sushi_with_masago_caviar.png'],
+        images: ['/images/products/sushi/sushi_with_masago_caviar.png'],
         rating: [5]
     },
     {
@@ -19,7 +19,7 @@ export const products: IProduct[] = [
         price: 1.6,
         category: 'sushi',
         description: '30 g Ingredients: Rice, Eel, Unagi sauce, Sesame, Nori. Soy sauce, ginger, wasabi are not served.”',
-        images: ['/../public/images/products/sushi/sushi_with_eel.png'],
+        images: ['/images/products/sushi/sushi_with_eel.png'],
         rating: [5]
     },
     {
@@ -29,7 +29,7 @@ export const products: IProduct[] = [
         price: 1.55,
         category: 'sushi',
         description: '30 g Ingredients: Rice, Salmon. Soy sauce, ginger, wasabi are not served.',
-        images: ['/../public/images/products/sushi/sushi_with_tuna.png'],
+        images: ['/images/products/sushi/sushi_with_tuna.png'],
         rating: [4]
     },
     {
@@ -39,7 +39,7 @@ export const products: IProduct[] = [
         price: 1.6,
         category: 'sushi',
         description: '30 g Ingredients: Rice, Salmon. Soy sauce, ginger, wasabi are not served.',
-        images: ['/../public/images/products/sushi/sushi_with_salmon.png'],
+        images: ['/images/products/sushi/sushi_with_salmon.png'],
         rating: [3]
     },
     {
@@ -49,7 +49,7 @@ export const products: IProduct[] = [
         price: 3,
         category: 'rolls',
         description: '90 g Ingredients: Rice, Nori, Cold Smoked Salmon. Not served soy sauce, ginger, wasabi',
-        images: ['/../public/images/products/rolls/mini_rolls_with_smoked_salmon.png'],
+        images: ['/images/products/rolls/mini_rolls_with_smoked_salmon.png'],
         rating: [1]
     },
     {
@@ -59,7 +59,7 @@ export const products: IProduct[] = [
         price: 5.2,
         category: 'rolls',
         description: '220 g Ingredients: Rice, Nori, Sesame, Snow crab, Mayonnaise, Avocado, Yaki sauce, Unagi sauce. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/california_rolls_with_sesame_seeds.png'],
+        images: ['/images/products/rolls/california_rolls_with_sesame_seeds.png'],
         rating: [3]
     },
     {
@@ -69,7 +69,7 @@ export const products: IProduct[] = [
         price: 2.5,
         category: 'rolls',
         description: '90 g Ingredients: Rice, Nori, Cucumber, Sesame. Not served soy sauce, ginger, wasabi',
-        images: ['/../public/images/products/rolls/mini_rolls_with_cucumbers.png'],
+        images: ['/images/products/rolls/mini_rolls_with_cucumbers.png'],
         rating: [2]
     },
     {
@@ -79,7 +79,7 @@ export const products: IProduct[] = [
         price: 2.5,
         category: 'rolls',
         description: '90 g Ingredients: Rice, Nori, Cream Cheese, Masago Caviar. Not served soy sauce, ginger, wasabi',
-        images: ['/../public/images/products/rolls/mini_rolls_with_cheese.png'],
+        images: ['/images/products/rolls/mini_rolls_with_cheese.png'],
         rating: [5]
     },
     {
@@ -89,7 +89,7 @@ export const products: IProduct[] = [
         price: 3.5,
         category: 'rolls',
         description: '90 g Ingredients: Rice, Nori, Eel, Unagi sauce, Sesame. Soy sauce, ginger, wasabi are not served. Not served soy sauce, ginger, wasabi',
-        images: ['/../public/images/products/rolls/mini_rolls_with_eel.png'],
+        images: ['/images/products/rolls/mini_rolls_with_eel.png'],
         rating: [5]
     },
     {
@@ -99,7 +99,7 @@ export const products: IProduct[] = [
         price: 4,
         category: 'rolls',
         description: '155 g Ingredients: Rice, Nori, Salmon, Cream Cheese. Not served soy sauce, ginger, wasabi',
-        images: ['/../public/images/products/rolls/philadelphia_mini_rolls.png'],
+        images: ['/images/products/rolls/philadelphia_mini_rolls.png'],
         rating: [5]
     },
     {
@@ -109,7 +109,7 @@ export const products: IProduct[] = [
         price: 4,
         category: 'rolls',
         description: '195 g Ingredients: Rice, Nori, Masago caviar, Sesame, Snow crab, Mayonnaise, Tiger shrimp, Spicy sauce. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/year_of_the_tiger_rolls.png'],
+        images: ['/images/products/rolls/year_of_the_tiger_rolls.png'],
         rating: [5]
     },
     {
@@ -119,7 +119,7 @@ export const products: IProduct[] = [
         price: 4.5,
         category: 'rolls',
         description: '235 g Ingredients: Rice, Nori, Sesame, Cream Cheese, Smoked Chicken, Cucumber, Masago Caviar. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/fusion_rolls.png'],
+        images: ['/images/products/rolls/fusion_rolls.png'],
         rating: [5]
     },
     {
@@ -129,7 +129,7 @@ export const products: IProduct[] = [
         price: 4.2,
         category: 'rolls',
         description: '200 g Ingredients: Rice, Nori, Masago caviar, Cream cheese, Salmon, Cucumber. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/green_philadelphia_in_caviar.png'],
+        images: ['/images/products/rolls/green_philadelphia_in_caviar.png'],
         rating: [5]
     },
     {
@@ -139,7 +139,7 @@ export const products: IProduct[] = [
         price: 4.9,
         category: 'rolls',
         description: '210 g Ingredients: Rice, Nori, Cream Cheese, Bacon, Cucumber, Unagi sauce, Sesame. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/european_rolls.png'],
+        images: ['/images/products/rolls/european_rolls.png'],
         rating: [5]
     },
     {
@@ -149,7 +149,7 @@ export const products: IProduct[] = [
         price: 5,
         category: 'rolls',
         description: '200 g Ingredients: Rice, Nori, Masago caviar, Salmon, Snow Crab, Mayonnaise, Cucumber. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/branded_rolls.png'],
+        images: ['/images/products/rolls/branded_rolls.png'],
         rating: [5]
     },
     {
@@ -159,7 +159,7 @@ export const products: IProduct[] = [
         price: 5,
         category: 'rolls',
         description: '190 g Ingredients: Rice, Nori, Masago caviar, Salmon, Avocado, Firm sauce. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/california_rolls_with_salmon.png'],
+        images: ['/images/products/rolls/california_rolls_with_salmon.png'],
         rating: [5]
     },
     {
@@ -169,7 +169,7 @@ export const products: IProduct[] = [
         price: 3.8,
         category: 'rolls',
         description: '225 g Ingredients: Rice, Nori, Cream Cheese, Salmon, Cucumber, Eel, Unagi sauce, Sesame. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/canada_rolls_with_salmon.png'],
+        images: ['/images/products/rolls/canada_rolls_with_salmon.png'],
         rating: [5]
     },
     {
@@ -179,7 +179,7 @@ export const products: IProduct[] = [
         price: 5.5,
         category: 'rolls',
         description: '230 g Ingredients: Rice, Nori, Cream Cheese, Cucumber, Salmon, Tuna, Spicy sauce. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/rainbow_rolls.png'],
+        images: ['/images/products/rolls/rainbow_rolls.png'],
         rating: [5]
     },
     {
@@ -189,7 +189,7 @@ export const products: IProduct[] = [
         price: 3.5,
         category: 'rolls',
         description: '215 g Ingredients: Rice, Nori, Masago Caviar, Cream Cheese, Avocado, Tiger Shrimp, Spicy sauce. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/philadelphia_rolls_with_shrimp.png'],
+        images: ['/images/products/rolls/philadelphia_rolls_with_shrimp.png'],
         rating: [5]
     },
     {
@@ -199,7 +199,7 @@ export const products: IProduct[] = [
         price: 3.8,
         category: 'rolls',
         description: '210 g Ingredients: Rice, Nori, Masago caviar, Cucumber, Snow Crab, Mayonnaise, Spicy sauce. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/crabster_rolls.png'],
+        images: ['/images/products/rolls/crabster_rolls.png'],
         rating: [5]
     },
     {
@@ -209,7 +209,7 @@ export const products: IProduct[] = [
         price: 3.5,
         category: 'rolls',
         description: '210 g Ingredients: Rice, Nori, Cream Cheese, Cucumber, Salmon, Eel, Unagi sauce, Sesame. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/philadelphia_duo_rolls.png'],
+        images: ['/images/products/rolls/philadelphia_duo_rolls.png'],
         rating: [5]
     }, 
     {
@@ -219,7 +219,7 @@ export const products: IProduct[] = [
         price: 4.8,
         category: 'rolls',
         description: '200 g Ingredients: Rice, Nori, Cream Cheese, Cucumber, Tuna. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/philadelphia_with_tuna.png'],
+        images: ['/images/products/rolls/philadelphia_with_tuna.png'],
         rating: [5]
     },
     {
@@ -229,7 +229,7 @@ export const products: IProduct[] = [
         price: 4.2,
         category: 'rolls',
         description: '220 g Ingredients: Rice, Nori, Cream Cheese, Cucumber, Eel, Unagi sauce, Sesame. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/canada_rolls_with_cheese.png'],
+        images: ['/images/products/rolls/canada_rolls_with_cheese.png'],
         rating: [5]
     },
     {
@@ -239,7 +239,7 @@ export const products: IProduct[] = [
         price: 3.9,
         category: 'rolls',
         description: '190 g Ingredients: Rice, Nori, Cream Cheese, Cucumber, Cold Smoked Salmon. Served with soy sauce (30 g), ginger (30 g), wasabi (10 g)',
-        images: ['/../public/images/products/rolls/rolls_with_smoked_salmon.png'],
+        images: ['/images/products/rolls/rolls_with_smoked_salmon.png'],
         rating: [5]
     },
     {
@@ -249,7 +249,7 @@ export const products: IProduct[] = [
         price: 1.7,
         category: 'sushi',
         description: '35 g Ingredients: Rice, Nori, Chuka, Nut Sauce. Not served soy sauce, ginger, wasabi',
-        images: ['/../public/images/products/sushi/sushi_with_chuka.png'],
+        images: ['/images/products/sushi/sushi_with_chuka.png'],
         rating: [5]
     },
     {
@@ -259,7 +259,7 @@ export const products: IProduct[] = [
         price: 1.6,
         category: 'sushi',
         description: '40 g Ingredients: Rice, Nori, Snow Crab, Mayonnaise, Spicy sauce. Not served soy sauce, ginger, wasabi',
-        images: ['/../public/images/products/sushi/spicy_sushi_with_crab.png'],
+        images: ['/images/products/sushi/spicy_sushi_with_crab.png'],
         rating: [5]
     },
     {
@@ -269,7 +269,7 @@ export const products: IProduct[] = [
         price: 1.8,
         category: 'sushi',
         description: '40 g Ingredients: Rice, Nori, Salmon, Spicy sauce. Not served soy sauce, ginger, wasabi',
-        images: ['/../public/images/products/sushi/spicy_sushi_with_salmon.png'],
+        images: ['/images/products/sushi/spicy_sushi_with_salmon.png'],
         rating: [5]
     },
     {
@@ -279,7 +279,7 @@ export const products: IProduct[] = [
         price: 1.8,
         category: 'sushi',
         description: '40 g Ingredients: Rice, Nori, Eel, Spicy sauce. Not served soy sauce, ginger, wasabi',
-        images: ['/../public/images/products/sushi/spicy_sushi_with_eel.png'],
+        images: ['/images/products/sushi/spicy_sushi_with_eel.png'],
         rating: [5]
     },
     
