@@ -12,11 +12,14 @@ SushiShop is an online store for sushi and rolls.
 ### Currently the project uses
 * Next.js
 * TypeScript
+* Redux Toolkit
+* Redux Persist
 * Framer Motion
 
 ### What is already on the site
 <ul>
 <li>Responsive web design</li>
+<li>SEO optimization</li>
 <li>Shopping cart</li>
 <li>Sorting products</li>
 <li>Beautiful animation</li>
